@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import serverLogo from '../images/server-logo.png';
+import backgroundImage from '../images/background.jpg';
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,14 +17,26 @@ function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   return (
     <AppBar 
       position="fixed" 
       sx={{ 
         backgroundColor: isScrolled ? 'rgba(10, 10, 10, 0.95)' : 'transparent',
         boxShadow: isScrolled ? 1 : 'none',
-        transition: 'all 0.3s ease'
+        transition: 'all 0.3s ease',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${backgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          zIndex: -1
+        }
       }}
     >
       <Toolbar sx={{ 

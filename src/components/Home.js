@@ -129,36 +129,26 @@ function Home() {
           </Box>
           {/* New Slideshow Frame */}
           <Box sx={{
-            width: '500px', // Reduced from 700px
-            height: '400px', // Reduced from 600px
-            pb: 0, // Removed padding bottom
-            ml: { xs: 2, md: 72 }, // Increased from 48 to 72 // Doubled from 6 to 12
+            width: '500px', 
+            height: '400px', 
+            pb: 0,
+            ml: { xs: 2, md: 72 },
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
             border: '2px solid rgba(255, 255, 255, 0.1)',
             borderRadius: '8px',
             overflow: 'hidden',
             display: { xs: 'none', md: 'block' }, // Hide on mobile
-            boxShadow: '0 0 20px rgba(0, 123, 255, 0.3)',
-            animation: 'floatHorizontal 3s ease-in-out infinite', // Reduced from 6s to 3s
-            '@keyframes floatHorizontal': {
-              '0%': { transform: 'translateX(0)' },
-              '50%': { transform: 'translateX(-15px)' }, // Increased from -5px to -15px for wider movement
-              '100%': { transform: 'translateX(0)' }
-            }
+            boxShadow: '0 0 20px rgba(0, 123, 255, 0.3)'
+            // Removed animation and @keyframes floatHorizontal
           }}>
             <Box sx={{
               width: '100%',
-              height: '400px', // Set to match parent height
+              height: '400px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              pb: 0, // Removed padding bottom
-              animation: 'pulse 3s ease-in-out infinite', // Added pulsing animation
-              '@keyframes pulse': {
-                '0%': { transform: 'scale(1)' },
-                '50%': { transform: 'scale(1.02)' },
-                '100%': { transform: 'scale(1)' }
-              }
+              pb: 0
+              // Removed animation and @keyframes pulse
             }}>
               <img 
                 src={frame1} 
